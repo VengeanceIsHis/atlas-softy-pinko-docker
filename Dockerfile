@@ -3,5 +3,5 @@
 FROM node:18-alpine
 WORKDIR /app
 COPY . .
-CMD ["node", "src/index.js"]
+CMD ["node", "Hello-World.html"]
 EXPOSE 3000
