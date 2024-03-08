@@ -8,3 +8,4 @@ WORKDIR /app
 RUN pip3 install flask
 COPY api.py /app/api.py
 CMD ["python3", "api.py"]
+EXPOSE 5252
