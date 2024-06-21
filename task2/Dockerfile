@@ -1,7 +1,8 @@
-FROM python:3.9
+FROM ubuntu:latest
 WORKDIR /app
-COPY ./app .
 RUN apt-get update && apt-get install -y python3 python3-pip
+FROM python:3.9
 RUN pip3 install Flask
+COPY ./app .
 RUN apt-get upgrade -y
 CMD ["python3", "api.py"]
