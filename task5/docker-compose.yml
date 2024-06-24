@@ -10,8 +10,7 @@ services:
       - "9000:9000"
     depends_on:
       - backend
-    networks:
-      - my-network
+
 
   backend:
     image: python:3.9
@@ -20,9 +19,14 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5252:5252"
-    networks:
-      - my-network
 
-networks:
-  my-network:
-    driver: bridge
+  proxy:
+    image: nginx:latest
+    build:
+      context: ./proxy
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+      - backend
