@@ -5,4 +5,4 @@ RUN pip3 install Flask
 RUN pip3 install flask-cors
 COPY ./app .
 RUN apt-get upgrade -y
-CMD ["python3", "./api/py"]
+CMD ["python3", "api.py"]
