@@ -3,6 +3,6 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y python3 python3-pip
 RUN pip3 install Flask
 RUN pip3 install flask-cors
-COPY ./api.py ./app/api.py
+COPY ./app .
 RUN apt-get upgrade -y
-CMD ["python3", ""]
+CMD ["python3", "/api/py"]
