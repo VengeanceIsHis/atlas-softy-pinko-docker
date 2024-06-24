@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: nginx:latest
+    build:
+      context: ./front-end
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+    depends_on:
+      - backend
+    networks:
+      - my-network
+
+  backend:
+    image: python:3.9
+    build:
+      context: ./back-end
+      dockerfile: Dockerfile
+    ports:
+      - "5252:5252"
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
