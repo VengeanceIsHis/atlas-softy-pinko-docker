@@ -3,7 +3,7 @@ version: '3.8'
 services:
   frontend:
   image: nginx:latest
-    build: ./frontend
+    build:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
