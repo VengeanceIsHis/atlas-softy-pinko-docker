@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   frontend:
-  image: nginx:latest
+    image: nginx:latest
     build:
       context: ./frontend
       dockerfile: Dockerfile
@@ -13,16 +13,16 @@ services:
     networks:
       - my-network
 
-
   backend:
-  image: python:3.9
-    build: ./backend
-      contect: ./backend
+    image: python:3.9
+    build:
+      context: ./backend
       dockerfile: Dockerfile
     ports:
       - "5252:5252"
     networks:
       - my-network
+
 networks:
   my-network:
     driver: bridge
