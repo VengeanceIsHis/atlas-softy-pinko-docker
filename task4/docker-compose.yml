@@ -4,7 +4,7 @@ services:
   frontend:
     image: nginx:latest
     build:
-      context: .\\frontend
+      context: ./front-end
       dockerfile: Dockerfile
     ports:
       - "9000:9000"
@@ -16,7 +16,7 @@ services:
   backend:
     image: python:3.9
     build:
-      context: .\\backend
+      context: ./back-end
       dockerfile: Dockerfile
     ports:
       - "5252:5252"
